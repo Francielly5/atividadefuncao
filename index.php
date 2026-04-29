@@ -28,7 +28,7 @@ Ex.: A7x9Kp2LmQ  -->
 
 <?php
 
-// 1. Saudação personalizada (exibe)
+// 1.
 function mensagem(){
     echo "Ola, Seja bem-vindo(a)";
    
@@ -45,10 +45,191 @@ echo"<br>";
 comParametro("Francilly");
 echo"<br>";
 
+//2.
+
+function soma($valor1,$valor2){
+  return $valor1 + $valor2;
+
+
+}
+echo soma(30,7);
+
+//3
+
+function par($valor1)
+{
+  if($valor1 % 2 == 0){
+    return "$valor1 e par";
+  }
+  else{
+    return "$valor1 e impar";
+  }
+
+}
+echo "<br>";
+ echo par(6);
+
+
+ //4
+
+ function tres($v1,$v2,$v3){
+if($v1 > $v2 && $v1 > $v3){
+  return "entao o $v1 e maior que todos";
+}
+elseif($v2 > $v1 && $v2 > $v3){
+  return "entao $v2 e maior que todos";
+}
+elseif($v3 > $v1 && $v3 > $v2){
+  return "entao $v3 e maior que todos";
+}
+else{
+return "Nenhum valor encontrado para comparar";
+
+}
+}
+echo "<br>";
+echo "<br>";
+echo tres(56,10,6);
+
+//5
+
+function Inverter($str){
+
+$invertido = '';
+$i =strlen($str);
+
+while($i--){
+  $invertido .= $str[$i];
+  
+}
+return $invertido;
+
+}
+echo "<br>";
+echo "<br>";
+
+echo inverter("love");
+
+//6
+
+function aplicarDesconto($valor) {
+    if ($valor > 500) {
+        $desconto = 0.20;
+    } elseif ($valor > 300) {
+        $desconto = 0.15;
+    } elseif ($valor > 100) {
+        $desconto = 0.10;
+    } else {
+        $desconto = 0;
+    }
+
+    $valorFinal = $valor - ($valor * $desconto);
+    return $valorFinal;
+}
+
+echo "<br>";
+echo "<br>";
+
+// Exemplo de uso
+echo aplicarDesconto(350); // Saída: 297.5
+
+//7
+
+function gerarLogin($nome, $sobrenome) {
+    $login = strtolower($nome . "." . $sobrenome);
+    return $login;
+}
+
+echo "<br>";
+echo "<br>";
+
+// Exemplo de uso
+echo gerarLogin("Fran", "Mell"); // saída: fran.mell
+
+//8
+
+function calcularFrete($valorProduto) {
+    if ($valorProduto <= 100) {
+        return 20;
+    } elseif ($valorProduto <= 300) {
+        return 15;
+    } else {
+        return 0; // frete grátis
+    }
+}
+
+echo "<br>";
+echo "<br>";
+
+// Exemplo de uso
+echo calcularFrete(80);   // 20
+echo "<br>";
+echo calcularFrete(200);  // 15
+echo "<br>";
+echo calcularFrete(350);  // 0
+
+//9
+
+function validarSenha($senha) {
+    $temNumero = false;
+    $temMaiuscula = false;
+
+    // verifica tamanho
+    if (strlen($senha) < 8) {
+        return "Senha inválida";
+    }
+
+    // percorre cada caractere
+    for ($i = 0; $i < strlen($senha); $i++) {
+        $letra = $senha[$i];
+
+        // verifica número
+        if ($letra >= '0' && $letra <= '9') {
+            $temNumero = true;
+        }
+
+        // verifica letra maiúscula
+        if ($letra >= 'A' && $letra <= 'Z') {
+            $temMaiuscula = true;
+        }
+    }
+
+    if ($temNumero && $temMaiuscula) {
+        return "Senha valida";
+    } else {
+        return "Senha invalida";
+    }
+}
+
+echo "<br>";
+echo "<br>";
+
+// Exemplo
+echo validarSenha("franjaaF12");
+
+
+//10
+
+function gerarToken($tamanho) {
+    $caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    $token = "";
+
+    for ($i = 0; $i < $tamanho; $i++) {
+        $posicao = rand(0, strlen($caracteres) - 1);
+        $token .= $caracteres[$posicao];
+    }
+
+    echo $token; // exibe na tela
+    return $token; // retorna o valor
+}
+
+echo "<br>";
+echo "<br>";
+
+// Exemplo de uso
+gerarToken(6);
 
 ?>
-
-
 
 
 
